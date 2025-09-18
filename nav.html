@@ -1,0 +1,70 @@
+<nav>
+        <div class="logo gradient-text">
+            <img src="Easel.svg" alt="Atelier Logo" class="logo-easel">
+            <span>Atelier</span>
+        </div>
+        <ul>
+            <li><a href="#">Daily challenges</a></li>
+            <li class="dropdown">
+                <a href="#">Tools 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" 
+                         stroke="currentColor" stroke-width="2" 
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Color Generator</a></li>
+                    <li><a href="#">Prompt Generator</a></li>
+                    <li><a href="#">Grid Tool</a></li>
+                </ul>
+            </li>
+         
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Inspiration.html">Inspiration Hub</a></li>
+            <li><a href="#">Community</a></li>
+            <li class="divider"></li>
+          <li><button type="button" onclick="location.href='Signup.html'">Sign in</button></li>
+
+        </ul>
+    </nav>  
+<style>
+        /* Logo image styling */
+        .logo-easel {
+            width:100 px;
+            height: 100px ;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        /* Logo text + flexbox */
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size:7 rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+    </style>
