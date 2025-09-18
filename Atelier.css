@@ -210,3 +210,16 @@ nav ul li button:hover {
   font-weight: bold;
   cursor: pointer;
 }
+
+.logo-easel {
+    width: 70px;   /* apni marzi ka size */
+    height: auto;
+    margin-right: 15px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem; /* yahan tu text bada kar sakti hai */
+    font-weight: 700;
+}
+
