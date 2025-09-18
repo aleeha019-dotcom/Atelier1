@@ -1,0 +1,212 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e8dad9;
+    color: #2d2d2d;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0, 25%, 95%);
+    padding: 15px 40px;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Logo */
+.logo {
+    font-size: 60px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Navbar Links */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+nav ul li a:hover {
+    color: #f78ca0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Divider */
+nav ul li.divider {
+    width: 1px;
+    height: 24px;
+    background-color: #e5e5e5;
+    margin: 0 10px;
+}
+
+/* Sign-in Button */
+nav ul li button {
+    background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-top: 80px;
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #180404;
+}
+
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #666;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 40px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    min-width: 180px;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #444;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    background: #fdf0f2;
+    color: #f9748f;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #f5f4f4);
+    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+#palette-container {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.color-block {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

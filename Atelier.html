@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atelier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="Atelier.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo gradient-text">
+            <img src="easel.svg" alt="Easel" class="logo-easel"> Atelier
+        </div>
+        <ul>
+            <li><a href="#">Daily challenges</a></li>
+            <li class="dropdown">
+                <a href="#">Tools 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" 
+                         stroke="currentColor" stroke-width="2" 
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Color Generator</a></li>
+                    <li><a href="#">Prompt Generator</a></li>
+                    <li><a href="#">Grid Tool</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Community</a></li>
+            <li class="divider"></li>
+            <li><button type="button">sign in</button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero / Intro Section -->
+    <section class="hero">
+        <h2>Welcome to Atelier</h2>
+        <p>Your all-in-one digital art hub for inspiration, tools, and community.</p>
+    </section>
+
+    <style>
+        .logo-easel {
+            width: 100px;
+            height: 100px;
+            margin-right: 25px;
+            vertical-align: middle;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 7 rem;
+            font-weight: 600;
+        }
+    </style>
+    
+</body>
+</html>
