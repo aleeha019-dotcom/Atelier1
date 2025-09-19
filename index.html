@@ -2,95 +2,621 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Atelier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="Atelier.css">
-</head>
-<body>
-
-    <!-- Navbar -->
-    <nav>
-        <div class="logo gradient-text">
-            <img src="Easel.svg" alt="Atelier Logo" class="logo-easel">
-            <span>Atelier</span>
-        </div>
-        <ul>
-            <li><a href="#">Daily challenges</a></li>
-            <li class="dropdown">
-                <a href="#">Tools 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" 
-                         stroke="currentColor" stroke-width="2" 
-                         stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Color Generator</a></li>
-                    <li><a href="#">Prompt Generator</a></li>
-                    <li><a href="#">Grid Tool</a></li>
-                </ul>
-            </li>
-         
-    <li><a href="index.html">Home</a></li>
-    <li><a href="Inspiration.html">Inspiration Hub</a></li>
-            <li><a href="#">Community</a></li>
-            <li class="divider"></li>
-          <li><button type="button" onclick="location.href='Signup.html'">Sign in</button></li>
-
-        </ul>
-    </nav>
-
-    <!-- Hero / Intro Section -->
-    <section class="hero">
-        <h2>Welcome to Atelier</h2>
-        <p>Your all-in-one digital art hub for inspiration, tools, and community.</p>
-    </section>
-
+    <title>Atelier - Creative Inspiration</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Logo image styling */
-        .logo-easel {
-            width:100 px;
-            height: 100px ;
-            margin-right: 12px;
-            vertical-align: middle;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
         }
-
-        /* Logo text + flexbox */
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size:7 rem;
-            font-weight: 600;
-            font-family: 'Playfair Display', serif;
+        
+        body {
+            background-color: #fff;
+            color: #202124;
+            min-height: 100vh;
+            padding: 0;
         }
-
+        
+        /* Navbar */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: hsl(0, 25%, 95%);
             padding: 15px 40px;
+            border-bottom: 1px solid #e5e5e5;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        nav ul {
+        /* Logo */
+        .logo {
             display: flex;
-            gap: 20px;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-easel {
+            width: 70px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        /* Navbar Links */
+        nav ul {
             list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
             margin: 0;
             padding: 0;
         }
 
-        nav a {
+        nav ul li a {
+            position: relative;
             text-decoration: none;
-            color: #333;
-            font-family: 'Inter', sans-serif;
+            color: #555;
+            font-size: 18px;
             font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+            transition: width 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+
+        nav ul li a:hover {
+            color: #f78ca0;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Divider */
+        nav ul li.divider {
+            width: 1px;
+            height: 24px;
+            background-color: #e5e5e5;
+            margin: 0 10px;
+        }
+
+        /* Sign-in Button */
+        nav ul li button {
+            background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav ul li button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            min-width: 180px;
+            padding: 10px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 20px;
+            color: #444;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #fdf0f2;
+            color: #f9748f;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-top: 80px;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #180404;
+        }
+
+        .hero p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Pinterest Gallery Section */
+        .gallery-section {
+            padding: 60px 40px;
+            background-color: #f8f9fa;
+            margin-top: 80px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #180404;
+            margin-bottom: 15px;
+        }
+
+        .gallery-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: white;
+            border: 1px solid #e5e5e5;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(135deg, #f78ca0, #f9748f);
+            color: white;
+            border-color: transparent;
+        }
+
+        .gallery-grid {
+            columns: 4;
+            column-gap: 1rem;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                columns: 3;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .gallery-grid {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                columns: 1;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .item-info {
+            padding: 15px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .item-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .save-btn {
+            background: #e60023;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+
+        .save-btn:hover {
+            background: #ad081b;
+        }
+
+        .action-icon {
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .action-icon:hover {
+            color: #f78ca0;
+        }
+
+        .upload-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #f78ca0, #f9748f);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .logo-easel {
+                width: 50px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .gallery-section {
+                padding: 40px 20px;
+            }
+
+            .gallery-title {
+                font-size: 28px;
+            }
         }
     </style>
-    
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="Easel.svg" alt="Atelier Logo" class="logo-easel">
+            <span>Atelier</span>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Discover</a></li>
+            <li class="dropdown">
+                <a href="#">Collections</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home Decor</a></li>
+                    <li><a href="#">Art</a></li>
+                    <li><a href="#">Travel</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li><button>Sign in</button></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h2>Discover Endless Inspiration</h2>
+        <p>Explore creative ideas and save your favorite visual discoveries to your personal collections</p>
+    </div>
+
+    <!-- Pinterest Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-header">
+            <h2 class="gallery-title">Creative Inspiration</h2>
+            <p class="gallery-subtitle">Browse our collection of inspiring ideas and save your favorites</p>
+        </div>
+
+        <div class="gallery-controls">
+            <button class="category-btn active">All</button>
+            <button class="category-btn">Fashion</button>
+            <button class="category-btn">Home Decor</button>
+            <button class="category-btn">Art</button>
+            <button class="category-btn">Travel</button>
+            <button class="category-btn">Food</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/4a/2f/00/4a2f00357ba0ec659af594e4d21dd339.jpg" alt="Minimalist interior design">
+                <div class="item-info">
+                    <h3 class="item-title">Minimalist Interior</h3>
+                    <p class="item-description">Clean lines and neutral tones create a peaceful space</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/04/19/ef/0419ef1ef65903cb92561f6b8afcd14f.jpg" alt="Cozy reading nook">
+                <div class="item-info">
+                    <h3 class="item-title">Reading Nook</h3>
+                    <p class="item-description">The perfect cozy corner for book lovers</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/c1/8e/57/c18e57f716fa80effe0533c512e3efa2.jpg" alt="Plant decoration">
+                <div class="item-info">
+                    <h3 class="item-title">Plant Decor</h3>
+                    <p class="item-description">Bring life to your space with indoor plants</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/49/02/4e/49024e728884406eed0f7c5e805ca08f.jpg" alt="Artistic photography">
+                <div class="item-info">
+                    <h3 class="item-title">Artistic Shot</h3>
+                    <p class="item-description">Creative photography inspiration</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/c1/a7/3d/c1a73d79992ac9163e5efc5afb7bbcc2.jpg" alt="Fashion style">
+                <div class="item-info">
+                    <h3 class="item-title">Street Style</h3>
+                    <p class="item-description">Urban fashion inspiration</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/b6/50/86/b650869a129dca5123be912a08252bb4.jpg" alt="Travel destination">
+                <div class="item-info">
+                    <h3 class="item-title">Mountain Escape</h3>
+                    <p class="item-description">Breathtaking views for your next adventure</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 7 -->
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/1200x/e8/48/66/e84866b02fdf51c89ffcbaa2140aa46d.jpg" alt="Creative workspace">
+                <div class="item-info">
+                    <h3 class="item-title">Creative Workspace</h3>
+                    <p class="item-description">Organized and inspiring work environment</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 8 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Coffee cup">
+                <div class="item-info">
+                    <h3 class="item-title">Coffee Time</h3>
+                    <p class="item-description">Start your day with a perfect cup of coffee</p>
+                    <div class="item-actions">
+                        <button class="save-btn">Save</button>
+                        <div>
+                            <i class="fas fa-share-alt action-icon"></i>
+                            <i class="fas fa-heart action-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="upload-btn">
+        <i class="fas fa-plus"></i>
+    </div>
+
+    <script>
+        // Simple "Save" button functionality
+        document.querySelectorAll('.save-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const originalText = this.textContent;
+                this.textContent = 'Saved!';
+                this.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = '#e60023';
+                }, 2000);
+            });
+        });
+        
+        // Category filter functionality
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // In a real implementation, this would filter the gallery
+                // For now, we'll just show an alert
+                alert(`Filtering by: ${this.textContent}`);
+            });
+        });
+        
+        // Upload button functionality
+        document.querySelector('.upload-btn').addEventListener('click', function() {
+            alert('Upload feature would open here!');
+        });
+        
+        // Like button functionality
+        document.querySelectorAll('.fa-heart').forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('fas');
+                this.classList.toggle('far');
+                
+                if (this.classList.contains('fas')) {
+                    this.style.color = '#f78ca0';
+                } else {
+                    this.style.color = '#666';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
