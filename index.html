@@ -9,338 +9,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Link to external CSS -->
-    
     <link rel="stylesheet" href="Atelier.css">
-  
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo gradient-text">
-            <img src="Easel.svg" alt="Atelier Logo" class="logo-easel">
-            <span>Atelier</span>
-        </div>
-        <ul>
-            <li><a href="#">Daily challenges</a></li>
-            <li class="dropdown">
-                <a href="#">Tools 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" 
-                         stroke="currentColor" stroke-width="2" 
-                         stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Color Generator</a></li>
-                    <li><a href="#">Prompt Generator</a></li>
-                    <li><a href="#">Grid Tool</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Community</a></li>
-            <li class="divider"></li>
-            <li><button onclick="window.location.href='Signup.html'">sign in</button></li>
-        </ul>
-    </nav>
-
+  
     <!-- Hero / Intro Section -->
     <section class="hero">
-        <h2>Welcome to Atelier</h2>
-        <p>Your all-in-one digital art hub for inspiration, tools, and community.</p>
+        <h2><button class="Explore" onclick="window.location.href='Pinterest.html'">Explore</button></h2>
+      
+        <div class="animation">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1071 646">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #ffda35;
+                  }
+
+                  .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+                    stroke-width: 0px;
+                  }
+
+                  .cls-2 {
+                    fill: #003d0f;
+                  }
+
+                  .cls-3 {
+                    fill: #ab946b;
+                  }
+
+                  .cls-4 {
+                    fill: #b4c1ff;
+                  }
+
+                  .cls-5 {
+                    fill: #1b1464;
+                  }
+
+                  .cls-6 {
+                    fill: #baa684;
+                  }
+                </style>
+              </defs>
+              <rect class="cls-5" width="1071" height="646" rx="55.29" ry="55.29"/>
+              <rect class="cls-4" x="66.5" y="59.5" width="933" height="527" rx="39.3" ry="39.3"/>
+              <path class="cls-3" d="M66.5,325.5c85-39.33,170-78.67,255-118,181.33,126,362.67,252,544,378-251.67.33-503.33.67-755,1-7.73.01-22.71-1.41-33-12-9.98-10.28-11.27-25.08-11-35v-214Z"/>
+              <g>
+                <rect class="cls-1" x="571.5" y="189.5" width="164" height="42"/>
+                <rect class="cls-1" x="523.5" y="189.5" width="42" height="42"/>
+              </g>
+              <path class="cls-6" d="M807.5,146.5c64.17,31.69,128.33,63.37,192.5,95.06-.33,103.19-.67,206.38-1,309.57-.55,3.65-2.42,12.76-10,20.9-10.22,10.98-23.4,12.23-26.5,12.44-478.92,1.96-829.94,2.11-857,0-4.33-.34-16.41-1.39-26-9.95-13.73-12.26-13.12-29.51-13-31.85,247-132.06,494-264.11,741-396.17Z"/>
+              <path class="cls-2" d="M397.5,587c-12.05-31.98-4.31-67.12,19.02-88.15,25.87-23.34,59.24-18.77,64.05-18.03.43-8.43,3.31-47.65,35.03-75.13,32.18-27.87,81.04-32.41,123.1-11.02,1.41-4.73,22.75-72.48,88.07-91.16,55.86-15.97,119.61,10.88,152.12,67.12,5.99-7.11,24.38-27.09,56.05-35.06,31.1-7.83,56.33.63,65.05,4.01v209.36c.03,2.74-.13,15.39-10.01,26.05-10.67,11.51-24.6,11.98-27.02,12.02H397.5Z"/>
+              <rect class="cls-1" x="66.5" y="201.5" width="117" height="41"/>
+              <rect class="cls-1" x="66.5" y="145.5" width="232" height="41"/>
+              <rect class="cls-1" x="307.5" y="145.5" width="41" height="41"/>
+            </svg>
+        </div>
     </section>
 
-     <!-- Pinterest-Style Section -->
-<div class="container">
-    <div class="gallery-header">
-        <h2 class="gallery-title">Today's Inspiration</h2>
-    </div>
-
-    <div class="gallery-grid">
-        <!-- Pins with the provided Pinterest images -->
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/4a/2f/00/4a2f00357ba0ec659af594e4d21dd339.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Colorful Abstract</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/04/19/ef/0419ef1ef65903cb92561f6b8afcd14f.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Nature Painting</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/c1/8e/57/c18e57f716fa80effe0533c512e3efa2.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Modern Art</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/736x/49/02/4e/49024e728884406eed0f7c5e805ca08f.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Creative Sketch</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/736x/c1/a7/3d/c1a73d79992ac9163e5efc5afb7bbcc2.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Watercolor Art</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/736x/b6/50/86/b650869a129dca5123be912a08252bb4.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Digital Portrait</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/e8/48/66/e84866b02fdf51c89ffcbaa2140aa46d.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Mixed Media</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/60/51/a3/6051a3e0e9e81b8220a5d2ca4d682c09.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Abstract Design</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/736x/c6/2d/fc/c62dfc8816ec1e89a7281ebef3980d10.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Character Design</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/17/a6/c4/17a6c413ae1f45f23cb75e76443cab5a.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Landscape Art</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/88/61/b9/8861b9504c6ef2f3369e45dbf12d1b86.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Creative Composition</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/25/25/b7/2525b76b97d91d1c8396bc866f2e5f40.jpg" alt="Art Inspiration">
-            <div class="item-info">
-                <h4>Modern Painting</h4>
-                <button class="save-btn">Save</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="upload-section">
-        <button class="upload-btn">+ Upload Pin</button>
-    </div>
-</div>
-
-<!-- Styles -->
-<style>
-    .container {
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 20px;
-    }
-
-    .gallery-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .gallery-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-    }
-
-    .search-box {
-        display: flex;
-        gap: 10px;
-    }
-
-    .search-box input {
-        padding: 8px 12px;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        outline: none;
-    }
-
-    .search-box button {
-        background-color: #e60023;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 20px;
-        cursor: pointer;
-        color: #fff;
-    }
-
-    .gallery-grid {
-        column-count: 4;
-        column-gap: 15px;
-    }
-
-    .gallery-item {
-        break-inside: avoid;
-        margin-bottom: 15px;
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .gallery-item img {
-        width: 100%;
-        border-radius: 12px;
-        display: block;
-    }
-
-    .item-info {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-        background: rgba(0,0,0,0.5);
-        color: #fff;
-        padding: 10px;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .save-btn {
-        background-color: #e60023;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 20px;
-        color: #fff;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    .upload-section {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .upload-btn {
-        background-color: #e60023;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-        .gallery-grid {
-            column-count: 3;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .gallery-grid {
-            column-count: 2;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .gallery-grid {
-            column-count: 1;
-        }
-    }
-</style>
-
-<!-- JS -->
-<script>
-    // Save button action
-    document.querySelectorAll('.save-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            alert('Pin saved!');
-        });
-    });
-
-    // Upload button action
-    document.querySelector('.upload-btn').addEventListener('click', () => {
-        alert('Upload functionality coming soon!');
-    });
-</script>
-
-    <style>
-        /* Logo image styling */
-        .logo-easel {
-            width:100 px;
-            height: 100px;
-            margin-right: 12px;
-            vertical-align: middle;
-        }
-
-        /* Logo text + flexbox */
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size:10 rem;
-            font-weight: 600;
-            font-family: 'Playfair Display', serif;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-        }
-    </style>
-    <div id="navbar"></div>
-
-
-
+    <!-- External JavaScript -->
+    <script src="Atelier.js"></script>
+    
+    <!-- Botpress Chat -->
     <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/09/19/19/20250919191425-BEI996S3.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/19/19/20250919191425-BEI996S3.js" defer></script>
     
 </body>
 </html>
