@@ -9,6 +9,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    transition: opacity 0.3s ease;
 }
 
 /* Navbar */
@@ -41,6 +42,11 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 /* Navbar Links */
@@ -84,12 +90,26 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* Active page highlighting */
+nav ul li a.active {
+    color: #007bff;
+    font-weight: 600;
+    border-bottom: 2px solid #007bff;
+}
+
 /* Divider */
 nav ul li.divider {
     width: 1px;
     height: 24px;
     background-color: #e5e5e5;
     margin: 0 10px;
+}
+
+.divider {
+    width: 1px;
+    height: 30px;
+    background: #ddd;
+    margin: 0 15px;
 }
 
 /* Sign-in Button */
@@ -102,8 +122,59 @@ nav ul li button {
     padding: 8px 18px;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Hero section with reduced top padding */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 40px 60px 40px; /* Reduced top padding from 60px to 20px */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    min-height: 500px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    z-index: 1;
+}
+
+.hero-content h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* SVG Animation Container - Strongly Right Aligned */
+.animation {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.animation svg {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    min-width: 300px;
 }
 
 .Explore {
@@ -119,55 +190,9 @@ nav ul li button {
     font-family: 'Montserrat', sans-serif;
 }
 
-nav ul li button:hover {
+.Explore:hover {
     transform: scale(1.05);
     opacity: 0.9;
-}
-
-/* Hero section with SVG right-aligned and vertically centered */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-content {
-    flex: 1;
-    max-width: 500px;
-}
-
-.hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #380e0e;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.animation {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-}
-
-.animation svg {
-    padding-top: 110px;
-    padding-right: 10px;
-    max-width: 100%;
-    height: auto;
-    max-height: 300px;
 }
 
 /* Pinterest-style gallery */
@@ -290,8 +315,22 @@ nav ul li button:hover {
     z-index: 1000;
 }
 
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
 .dropdown-menu li {
     list-style: none;
+    padding: 0;
 }
 
 .dropdown-menu li a {
@@ -305,6 +344,8 @@ nav ul li button:hover {
 .dropdown-menu li a:hover {
     background: #fdf0f2;
     color: #f9748f;
+    background-color: #edd9de;
+    color:#f9748f;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -318,9 +359,20 @@ nav ul li button:hover {
     bottom: 0;
     width: 0;
     height: 3px;
-    background: linear-gradient(135deg, #f5f4f4);
+    background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
     transition: width 0.3s ease-in-out;
     border-radius: 2px;
+
+}
+
+/* Dropdown arrow rotation */
+.dropdown.active svg {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.dropdown svg {
+    transition: transform 0.3s ease;
 }
 
 #palette-container {
@@ -341,7 +393,13 @@ nav ul li button:hover {
     cursor: pointer;
 }
 
-/* Responsive */
+/* Loading state styles */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
     .gallery-grid {
         column-count: 3;
@@ -357,6 +415,34 @@ nav ul li button:hover {
         gap: 15px;
     }
 
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 15px 20px 30px 20px; /* Reduced top padding for mobile too */
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        order: 2;
+    }
+    
+    .animation {
+        order: 1;
+        justify-content: center;
+        padding-left: 0;
+        width: 100%;
+    }
+    
+    .animation svg {
+        max-height: 300px;
+        min-width: 250px;
+    }
+
+    .hero-content h3 {
+        font-size: 24px;
+    }
+
     .hero h2 {
         font-size: 32px;
     }
@@ -368,91 +454,7 @@ nav ul li button:hover {
     .gallery-grid {
         column-count: 2;
     }
-}
 
-@media (max-width: 480px) {
-    .gallery-grid {
-        column-count: 1;
-    }
-}
-/* Active page highlighting */
-nav ul li a.active {
-    color: #007bff; /* Ya jo bhi aapka brand color hai */
-    font-weight: 600;
-    border-bottom: 2px solid #007bff;
-}
-
-/* Logo hover effect */
-.logo {
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-
-/* Dropdown improvements */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    min-width: 200px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.dropdown-menu li {
-    padding: 0;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #f8f9fa;
-    color: #007bff;
-}
-
-/* Dropdown arrow rotation */
-.dropdown.active svg {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-}
-
-.dropdown svg {
-    transition: transform 0.3s ease;
-}
-
-/* Button hover effects */
-nav ul li button {
-    transition: all 0.3s ease;
-}
-
-nav ul li button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Smooth page transitions */
-body {
-    transition: opacity 0.3s ease;
-}
-
-/* Mobile responsiveness for navbar */
-@media (max-width: 768px) {
     .dropdown-menu {
         position: static;
         box-shadow: none;
@@ -465,24 +467,32 @@ body {
         padding: 8px 20px;
         font-size: 14px;
     }
-}
 
-/* Loading state styles (optional) */
-.loading {
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-/* Divider styling */
-.divider {
-    width: 1px;
-    height: 30px;
-    background: #ddd;
-    margin: 0 15px;
-}
-
-@media (max-width: 768px) {
     .divider {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 10px 15px 20px 15px; /* Further reduced for very small screens */
+    }
+    
+    .animation svg {
+        max-height: 250px;
+        min-width: 200px;
+    }
+
+    .hero-content h3 {
+        font-size: 20px;
+    }
+
+    .Explore {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    .gallery-grid {
+        column-count: 1;
     }
 }
